@@ -57,18 +57,18 @@ body {
   color: #fff;
   display: inline-block;
   font-size: 3em;
+  font-weight: bold;
   text-shadow: 1px 0 #222a33, 1px 1px #222a33, 0 1px #222a33, 1px 0 #222a33;
   text-shadow: 2px 0 #000, 2px 2px #000, 0 2px #000, 2px 0 #000;
-}
-.header .full-name,.header .title {
-  font-weight: bold;
   text-transform: capitalize;
 }
 .header .title {
   color: #449399;
   font-size: 1.5em;
+  font-weight: bold;
   padding-bottom: 10px;
   padding-top: 10px;
+  text-transform: capitalize;
 }
 .header .text {
   color: #fff;
@@ -77,8 +77,8 @@ body {
   border: 5px solid #449399;
   border-radius: 50%;
   height: 100%;
-  max-height: 150px;
-  max-width: 150px;
+  max-height: 200px;
+  max-width: 200px;
   position: relative;
   transition: border 5s;
   width: 100%;
@@ -128,6 +128,10 @@ body {
   display: inline-block;
   width: 100%;
 }
+.contact .wrapper li:hover,.contact .wrapper li a:hover,.content .certificates li:hover,.content .certificates li:hover a,.content .my-work li:hover,.content .my-work li:hover a,.footer .wrapper a:hover {
+  color: #449399;
+  transition: color 0.5s;
+}
 .contact .wrapper li a {
   color: inherit;
   height: 100%;
@@ -135,10 +139,6 @@ body {
   text-transform: none;
   transition: color 1s;
   width: 100%;
-}
-.contact .wrapper li a:hover,.content .certificates li:hover,.content .certificates li:hover a,.content .my-work li:hover,.content .my-work li:hover a,.footer .wrapper a:hover {
-  color: #449399;
-  transition: color 0.5s;
 }
 .contact .wrapper li + li {
   margin-top: 5px;
@@ -150,7 +150,7 @@ body {
   flex-wrap: wrap;
 }
 .content .wrapper .title {
-  border-bottom: 2px solid #449399;
+  border-bottom: 2px solid #525659;
   color: #449399;
   display: block;
   font-size: 1.3em;
@@ -163,8 +163,11 @@ body {
   margin-bottom: 35px;
   width: 50%;
 }
-.content .certificates li,.content .my-work li {
+.content .certificates li p,.content .my-work li p {
   font-weight: 700;
+}
+.content .certificates li:hover p,.content .my-work li:hover p {
+  color: #449399;
 }
 .content .certificates li a,.content .my-work li a {
   color: #222a33;
@@ -189,9 +192,6 @@ body {
 }
 .content .skills li a:hover {
   background: #449399;
-}
-.content .languages li {
-  display: block;
 }
 .content .languages li span {
   display: inline-block;
@@ -223,4 +223,72 @@ body {
 }
 .footer .wrapper a {
   transition: color 1s;
+}
+@media only screen and (max-width: 850px) {
+  .header .wrapper {
+    flex-direction: column-reverse;
+  }
+  .header .text-wrapper {
+    padding-right: 0;
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .content .wrapper {
+    flex-direction: column;
+  }
+  .content .wrapper .title {
+    max-width: 100%;
+    width: 100%;
+  }
+  .content .wrapper .block {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  body {
+    padding: 3em 1.3em;
+  }
+  .wrapper {
+    padding: 1.5em 2em;
+  }
+  .contact .wrapper .right {
+    text-align: right;
+  }
+  .contact .wrapper .right li {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .contact .wrapper .right li a {
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .contact .wrapper,.content .languages li {
+    display: block;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .header .full-name {
+    font-size: 2em;
+  }
+  .content .wrapper .title,.header .title {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body {
+    padding: 2em 1em;
+  }
+  .wrapper {
+    padding: 1em;
+  }
+}
+@media only screen and (max-width: 370px);
+@media only screen and (max-width: 333px) {
+  .header .full-name {
+    font-size: 1.8em;
+  }
 }
