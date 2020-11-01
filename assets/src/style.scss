@@ -43,6 +43,9 @@ body {
   @include s(0, 400px) {
     padding: 2em 1em 2em;
   }
+  @include s(0, 300px) {
+    padding: 0;
+  }
 }
 
 .wrapper {
@@ -176,6 +179,9 @@ body {
     .left,
     .right {
       width: 100%;
+      li {
+        word-wrap: break-word;
+      }
     }
     .right {
       @include s(0, 650px) {
@@ -215,6 +221,9 @@ body {
       }
     }
   }
+  .phoneHide {
+    display: none;
+  }
 }
 
 .content {
@@ -240,12 +249,16 @@ body {
         max-width: 100%;
       }
       @include s(0, 370px) {
-        font-size: 1em;
+        font-size: 1.01em;
       }
     }
     .block {
       width: 50%;
       margin-bottom: 35px;
+      li {
+        //overflow-wrap: anywhere;
+        word-wrap: break-word;
+      }
       @include s(0, 780px) {
         width: 100%;
         margin-bottom: 30px;
@@ -257,6 +270,7 @@ body {
     li {
       p {
         font-weight: 700;
+        text-transform: none;
       }
       &:hover {
         color: $base-color-third;
@@ -272,6 +286,7 @@ body {
       a {
         color: $base-color-second;
         transition: color 0.5s;
+        text-transform: lowercase;
       }
       + li {
         margin-top: 10px;
@@ -279,15 +294,12 @@ body {
     }
   }
 
-  .certificates {
-    a {
-      font-weight: bold;
-    }
-  }
-
   .skills {
     li {
       display: inline-block;
+      @include s(0, 300px) {
+        width: 99%;
+      }
       a {
         display: block;
         background: $base-color-second;
@@ -326,6 +338,10 @@ body {
           border-radius: 50%;
           &.active {
             background: $base-color-second;
+            &:hover {
+              background: $base-color-third;
+              transition: background 0.8s;
+            }
           }
           + li {
             margin-left: 5px;
@@ -339,9 +355,19 @@ body {
   }
 
   .own-experience,
-  .study {
+  .study,
+  .qualities {
     li {
       display: inline-block;
+    }
+  }
+  .qualities {
+    width: 100% !important;
+    .title {
+      width: 97.5%;
+      @include s(0, 780px) {
+        width: 100%;
+      }
     }
   }
 }
